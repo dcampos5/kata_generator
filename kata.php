@@ -4,7 +4,7 @@ require_once 'app/Controllers/KataController.php';
 
 use App\Controllers\KataController;
 
-if(!empty($_POST['birdName'])) {
+if(!empty(trim($_POST['birdName']))) {
     $kata = new KataController();
     echo json_encode($kata->generateKata($_POST['birdName']));
 } else {
